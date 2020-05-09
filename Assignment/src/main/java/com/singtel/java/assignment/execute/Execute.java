@@ -78,6 +78,12 @@ public class Execute {
 		System.out.println(clownFish.getColor());
 		System.out.println(clownFish.getSize());
 
+		System.out.println("========= DOLPHIN =========");
+		animal=animalFactory.getAnimal(Species.DOLPHIN);
+		animal.sing();
+		animal.walk();
+		animal.swim();
+		
 		
 	}
 }

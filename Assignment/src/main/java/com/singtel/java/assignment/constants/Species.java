@@ -8,7 +8,8 @@ public enum Species {
 	ROOSTER,
 	ROOSTER2,
 	PARROT,
-	FISH
+	FISH,
+	DOLPHIN
 
 }
 
