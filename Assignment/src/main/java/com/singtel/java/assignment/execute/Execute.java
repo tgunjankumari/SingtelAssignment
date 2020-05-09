@@ -1,11 +1,14 @@
 package com.singtel.java.assignment.execute;
 
 import com.singtel.java.assignment.Animal;
+import com.singtel.java.assignment.Fish;
 import com.singtel.java.assignment.Parrot;
 import com.singtel.java.assignment.constants.Species;
 import com.singtel.java.assignment.decorator.ParrotNearCat;
 import com.singtel.java.assignment.decorator.ParrotNearDog;
 import com.singtel.java.assignment.decorator.ParrotNearRooster;
+import com.singtel.java.assignment.decorator.FishAsClownFish;
+import com.singtel.java.assignment.decorator.FishAsShark;
 import com.singtel.java.assignment.factory.AnimalFactory;
 
 public class Execute {
@@ -58,6 +61,23 @@ public class Execute {
 		animal.walk();
 		animal.sing();
 		
+		System.out.println("========= SHARK =========");
+		Fish shark=new FishAsShark((Fish) animal);
+		shark.sing();
+		shark.eatsFish();
+		shark.cracksJokes();
+		System.out.println(shark.getColor());
+		System.out.println(shark.getSize());
+		
+		
+		System.out.println("========= SHARK =========");
+		Fish clownFish=new FishAsClownFish((Fish) animal);
+		clownFish.sing();
+		clownFish.eatsFish();
+		clownFish.cracksJokes();
+		System.out.println(clownFish.getColor());
+		System.out.println(clownFish.getSize());
+
 		
 	}
 }

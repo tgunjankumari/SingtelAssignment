@@ -24,4 +24,6 @@ public abstract class Animal implements AnimalTraits{
 		System.out.println(PrintConstants.SWIMMING);
 		return true;
 	}
+	
+	
 }
