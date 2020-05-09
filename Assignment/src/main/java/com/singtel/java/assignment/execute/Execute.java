@@ -13,35 +13,51 @@ public class Execute {
 	public static void main(String[] args) {
 		
 		AnimalFactory animalFactory=new AnimalFactory();
-		Animal bird=animalFactory.getAnimal(Species.BIRD);
-		bird.sing();
+
+		System.out.println("========= BIRD =========");
+		Animal animal=animalFactory.getAnimal(Species.BIRD);
+		animal.sing();
 		
-		bird=animalFactory.getAnimal(Species.DUCK);
-		bird.sing();
-		bird.swim();
+		System.out.println("========= DUCK =========");
+		animal=animalFactory.getAnimal(Species.DUCK);
+		animal.sing();
+		animal.swim();
 		
-		bird=animalFactory.getAnimal(Species.CHICKEN);
-		bird.sing();
-		bird.fly();
+		System.out.println("========= CHICKEN =========");
+		animal=animalFactory.getAnimal(Species.CHICKEN);
+		animal.sing();
+		animal.fly();
 		
-		bird=animalFactory.getAnimal(Species.ROOSTER);
-		bird.sing();
-		bird.swim();
+		System.out.println("========= ROOSTER =========");
+		animal=animalFactory.getAnimal(Species.ROOSTER);
+		animal.sing();
+		animal.swim();
 		
-		bird=animalFactory.getAnimal(Species.ROOSTER2);
-		bird.sing();
-		bird.swim();
-		bird.fly();
-		bird.walk();
+		System.out.println("========= ROOSTER WITHOUT INHERITANCE =========");
+		animal=animalFactory.getAnimal(Species.ROOSTER2);
+		animal.sing();
+		animal.swim();
+		animal.fly();
+		animal.walk();
 		
-		bird=animalFactory.getAnimal(Species.PARROT);
+		System.out.println("========= PARROT =========");
+		animal=animalFactory.getAnimal(Species.PARROT);
 		
-		Animal parrotNearCat=new ParrotNearCat((Parrot) bird);
+		Animal parrotNearCat=new ParrotNearCat((Parrot) animal);
 		parrotNearCat.sing();
-		Animal parrotNearDog=new ParrotNearDog((Parrot) bird);
+		
+		Animal parrotNearDog=new ParrotNearDog((Parrot) animal);
 		parrotNearDog.sing();
-		Animal parrotNearRooster=new ParrotNearRooster((Parrot) bird);
+		
+		Animal parrotNearRooster=new ParrotNearRooster((Parrot) animal);
 		parrotNearRooster.sing();
+		
+		System.out.println("========= FISH =========");
+		animal=animalFactory.getAnimal(Species.FISH);
+		animal.swim();
+		animal.walk();
+		animal.sing();
+		
 		
 	}
 }
