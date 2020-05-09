@@ -44,5 +44,10 @@ public class Fish extends Animal {
 		System.out.println(PrintConstants.NO_WALKING);
 		return false;
 	}
+	
+	public boolean fly() {
+		System.out.println(PrintConstants.NO_FLYING);
+		return false;
+	}
 
 }

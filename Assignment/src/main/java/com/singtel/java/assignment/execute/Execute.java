@@ -1,5 +1,9 @@
 package com.singtel.java.assignment.execute;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.function.Supplier;
+
 import com.singtel.java.assignment.Animal;
 import com.singtel.java.assignment.Caterpillar;
 import com.singtel.java.assignment.Fish;
@@ -104,5 +108,39 @@ public class Execute {
 		caterpillar=caterpillar.metamorphosize((Caterpillar) caterpillar);
 		caterpillar.fly();
 		caterpillar.sing();
+		
+		System.out.println(getStatistics(animalFactory.getAnimalsuppliers()));
+		
+		
+	}
+	
+	public static String getStatistics(Map<Species, Supplier<? extends Animal>> map) {
+		int countFlyable = 0;
+		int countWalkable = 0;
+		int countSingable = 0;
+		int countSwimmable = 0;
+		String result="======== Animal Statistics ======== \n";
+	    Iterator<Map.Entry<Species, Supplier<? extends Animal>>> iterator = map.entrySet().iterator();
+	    while (iterator.hasNext()) {
+	        Map.Entry<Species, Supplier<? extends Animal>> entry = iterator.next();
+	        Animal animal=entry.getValue().get();
+	        if(animal.fly()) {
+	        	countFlyable++;
+	        }
+	        if(animal.walk()) {
+	        	countWalkable++;
+	        }
+	        if(animal.sing()) {
+	        	countSingable++;
+	        }
+	        if(animal.swim()) {
+	        	countSwimmable++;
+	        }
+	    }
+	    result+=countFlyable+" animals can fly\n";
+	    result+=countWalkable+" animals can walk\n";
+	    result+=countSingable+" animals can sing\n";
+	    result+=countSwimmable+" animals can swim\n";
+	    return result;
 	}
 }

@@ -23,6 +23,10 @@ public class AnimalFactory {
 
 	private static final Map<Species, Supplier<? extends Animal>> animalSuppliers = new HashMap<Species, Supplier<? extends Animal>>();
 
+	public static Map<Species, Supplier<? extends Animal>> getAnimalsuppliers() {
+		return animalSuppliers;
+	}
+
 	static {
 		animalSuppliers.put(Species.BIRD, new BirdSupplier());
 		animalSuppliers.put(Species.DUCK, new DuckSupplier());

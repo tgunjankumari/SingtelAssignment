@@ -9,4 +9,8 @@ public class Dolphin extends Animal{
 		return false;
 	}
 
+	public boolean fly() {
+		System.out.println(PrintConstants.NO_FLYING);
+		return false;
+	}
 }
