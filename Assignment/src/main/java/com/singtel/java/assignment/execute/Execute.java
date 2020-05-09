@@ -1,7 +1,11 @@
 package com.singtel.java.assignment.execute;
 
 import com.singtel.java.assignment.Animal;
+import com.singtel.java.assignment.Parrot;
 import com.singtel.java.assignment.constants.Species;
+import com.singtel.java.assignment.decorator.ParrotNearCat;
+import com.singtel.java.assignment.decorator.ParrotNearDog;
+import com.singtel.java.assignment.decorator.ParrotNearRooster;
 import com.singtel.java.assignment.factory.AnimalFactory;
 
 public class Execute {
@@ -29,5 +33,15 @@ public class Execute {
 		bird.swim();
 		bird.fly();
 		bird.walk();
+		
+		bird=animalFactory.getAnimal(Species.PARROT);
+		
+		Animal parrotNearCat=new ParrotNearCat((Parrot) bird);
+		parrotNearCat.sing();
+		Animal parrotNearDog=new ParrotNearDog((Parrot) bird);
+		parrotNearDog.sing();
+		Animal parrotNearRooster=new ParrotNearRooster((Parrot) bird);
+		parrotNearRooster.sing();
+		
 	}
 }
