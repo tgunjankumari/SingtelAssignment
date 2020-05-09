@@ -19,5 +19,15 @@ public class Execute {
 		bird=animalFactory.getAnimal(Species.CHICKEN);
 		bird.sing();
 		bird.fly();
+		
+		bird=animalFactory.getAnimal(Species.ROOSTER);
+		bird.sing();
+		bird.swim();
+		
+		bird=animalFactory.getAnimal(Species.ROOSTER2);
+		bird.sing();
+		bird.swim();
+		bird.fly();
+		bird.walk();
 	}
 }

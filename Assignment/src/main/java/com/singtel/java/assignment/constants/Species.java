@@ -4,6 +4,8 @@ public enum Species {
 	
 	BIRD,
 	DUCK,
-	CHICKEN
+	CHICKEN,
+	ROOSTER,
+	ROOSTER2
 
 }

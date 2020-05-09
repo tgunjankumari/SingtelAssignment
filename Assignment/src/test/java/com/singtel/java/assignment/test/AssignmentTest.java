@@ -22,35 +22,62 @@ public class AssignmentTest {
 	private static final String newLine=System.lineSeparator();
 	
 	private static AnimalFactory animalFactory = new AnimalFactory();
+	
+	private static Animal animal;
+	
 	@Test
 	public void testBirdSinging(){
 		
-		Bird bird1=new Bird();
-		bird1.sing();
+		animal=new Bird();
+		animal.sing();
 		assertEquals(PrintConstants.SINGING, systemOutRule.getLog().replaceAll(newLine,""));
 		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
 		systemOutRule.clearLog();
 		
-		Animal bird2 = animalFactory.getAnimal(Species.BIRD);
-		bird2.sing();
+		animal = animalFactory.getAnimal(Species.BIRD);
+		animal.sing();
 		assertEquals(PrintConstants.SINGING, systemOutRule.getLog().replaceAll(newLine,""));
 		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
 		systemOutRule.clearLog();		
 		
-		bird2=animalFactory.getAnimal(Species.DUCK);
-		bird2.sing();
+	}
+	
+	@Test
+	public void testDuckAndChicken(){
+		animal=animalFactory.getAnimal(Species.DUCK);
+		animal.sing();
 		assertEquals(PrintConstants.DUCK_SINGING, systemOutRule.getLog().replaceAll(newLine,""));
 		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
-		assertTrue(bird2.swim());
+		assertTrue(animal.swim());
 		systemOutRule.clearLog();	
 		
-		bird2=animalFactory.getAnimal(Species.CHICKEN);
-		bird2.sing();
+		animal=animalFactory.getAnimal(Species.CHICKEN);
+		animal.sing();
 		assertEquals(PrintConstants.CHICKEN_SINGING, systemOutRule.getLog().replaceAll(newLine,""));	
 		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
-		assertFalse(bird2.swim());
-		assertFalse(bird2.fly());
+		assertFalse(animal.swim());
+		assertFalse(animal.fly());
 		systemOutRule.clearLog();	
+	}
+		
+	@Test
+	public void testRoosterAndRooster2(){
+		animal=animalFactory.getAnimal(Species.ROOSTER);
+		animal.sing();
+		assertEquals(PrintConstants.ROOSTER_SINGING, systemOutRule.getLog().replaceAll(newLine,""));	
+		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
+		assertFalse(animal.swim());
+		assertFalse(animal.fly());
+		systemOutRule.clearLog();	
+		
+		animal=animalFactory.getAnimal(Species.ROOSTER2);
+		animal.sing();
+		assertEquals(PrintConstants.ROOSTER_SINGING, systemOutRule.getLog().replaceAll(newLine,""));	
+		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
+		assertFalse(animal.swim());
+		assertFalse(animal.fly());
+		systemOutRule.clearLog();	
+
 	}
 
 }

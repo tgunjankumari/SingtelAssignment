@@ -14,6 +14,7 @@ public class PrintConstants {
 	
 	public static final String CHICKEN_SINGING="Cluck, cluck";
 	public static final String DUCK_SINGING="Quack, quack";	
+	public static final String ROOSTER_SINGING="Cock-a-doodle-doo";	
 	
 	
 }
