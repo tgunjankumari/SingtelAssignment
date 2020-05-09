@@ -1,14 +1,16 @@
 package com.singtel.java.assignment.execute;
 
 import com.singtel.java.assignment.Animal;
+import com.singtel.java.assignment.Caterpillar;
 import com.singtel.java.assignment.Fish;
+import com.singtel.java.assignment.Insect;
 import com.singtel.java.assignment.Parrot;
 import com.singtel.java.assignment.constants.Species;
+import com.singtel.java.assignment.decorator.FishAsClownFish;
+import com.singtel.java.assignment.decorator.FishAsShark;
 import com.singtel.java.assignment.decorator.ParrotNearCat;
 import com.singtel.java.assignment.decorator.ParrotNearDog;
 import com.singtel.java.assignment.decorator.ParrotNearRooster;
-import com.singtel.java.assignment.decorator.FishAsClownFish;
-import com.singtel.java.assignment.decorator.FishAsShark;
 import com.singtel.java.assignment.factory.AnimalFactory;
 
 public class Execute {
@@ -84,6 +86,23 @@ public class Execute {
 		animal.walk();
 		animal.swim();
 		
+		System.out.println("========= BUTTERFLY =========");
+		animal=animalFactory.getAnimal(Species.BUTTERFLY);
+		animal.fly();
+		animal.sing();
 		
+		System.out.println("========= CATERPILLAR =========");
+		Insect caterpillar=(Insect)animalFactory.getAnimal(Species.CATERPILLAR);
+		caterpillar.fly();
+		caterpillar.walk();
+		
+		System.out.println("========= BEFORE METAMORPHOSIS - CATERPILLAR =========");
+		caterpillar.fly();
+		caterpillar.walk();
+		
+		System.out.println("========= AFTER METAMORPHOSIS - BUTTERFLY =========");
+		caterpillar=caterpillar.metamorphosize((Caterpillar) caterpillar);
+		caterpillar.fly();
+		caterpillar.sing();
 	}
 }

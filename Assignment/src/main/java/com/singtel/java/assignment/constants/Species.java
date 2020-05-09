@@ -9,7 +9,10 @@ public enum Species {
 	ROOSTER2,
 	PARROT,
 	FISH,
-	DOLPHIN
+	DOLPHIN,
+	INSECT,
+	CATERPILLAR,
+	BUTTERFLY
 
 }
 

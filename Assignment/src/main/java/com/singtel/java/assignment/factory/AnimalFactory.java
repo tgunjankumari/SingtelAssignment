@@ -5,12 +5,16 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 import com.singtel.java.assignment.Animal;
+import com.singtel.java.assignment.Caterpillar;
 import com.singtel.java.assignment.constants.Species;
 import com.singtel.java.assignment.suppliers.BirdSupplier;
+import com.singtel.java.assignment.suppliers.ButterflySupplier;
+import com.singtel.java.assignment.suppliers.CaterPillarSupplier;
 import com.singtel.java.assignment.suppliers.ChickenSupplier;
 import com.singtel.java.assignment.suppliers.DolphinSupplier;
 import com.singtel.java.assignment.suppliers.DuckSupplier;
 import com.singtel.java.assignment.suppliers.FishSupplier;
+import com.singtel.java.assignment.suppliers.InsectSupplier;
 import com.singtel.java.assignment.suppliers.ParrotSupplier;
 import com.singtel.java.assignment.suppliers.Rooster2Supplier;
 import com.singtel.java.assignment.suppliers.RoosterSupplier;
@@ -28,6 +32,9 @@ public class AnimalFactory {
 		animalSuppliers.put(Species.PARROT, new ParrotSupplier());
 		animalSuppliers.put(Species.FISH, new FishSupplier());
 		animalSuppliers.put(Species.DOLPHIN, new DolphinSupplier());
+		animalSuppliers.put(Species.INSECT, new InsectSupplier());
+		animalSuppliers.put(Species.BUTTERFLY, new ButterflySupplier());
+		animalSuppliers.put(Species.CATERPILLAR, new CaterPillarSupplier());
 	}
 
 	public static void registerAnimalType(Species animalType, Supplier<? extends Animal> supplier) {
