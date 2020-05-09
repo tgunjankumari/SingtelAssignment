@@ -1,6 +1,8 @@
 package com.singtel.java.assignment.test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -35,6 +37,20 @@ public class AssignmentTest {
 		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
 		systemOutRule.clearLog();		
 		
+		bird2=animalFactory.getAnimal(Species.DUCK);
+		bird2.sing();
+		assertEquals(PrintConstants.DUCK_SINGING, systemOutRule.getLog().replaceAll(newLine,""));
+		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
+		assertTrue(bird2.swim());
+		systemOutRule.clearLog();	
+		
+		bird2=animalFactory.getAnimal(Species.CHICKEN);
+		bird2.sing();
+		assertEquals(PrintConstants.CHICKEN_SINGING, systemOutRule.getLog().replaceAll(newLine,""));	
+		assertNotSame(PrintConstants.WALKING, systemOutRule.getLog().replaceAll(newLine,""));
+		assertFalse(bird2.swim());
+		assertFalse(bird2.fly());
+		systemOutRule.clearLog();	
 	}
 
 }

@@ -11,5 +11,13 @@ public class Execute {
 		AnimalFactory animalFactory=new AnimalFactory();
 		Animal bird=animalFactory.getAnimal(Species.BIRD);
 		bird.sing();
+		
+		bird=animalFactory.getAnimal(Species.DUCK);
+		bird.sing();
+		bird.swim();
+		
+		bird=animalFactory.getAnimal(Species.CHICKEN);
+		bird.sing();
+		bird.fly();
 	}
 }

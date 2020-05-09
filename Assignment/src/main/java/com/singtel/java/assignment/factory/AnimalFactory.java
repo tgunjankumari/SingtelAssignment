@@ -7,6 +7,8 @@ import java.util.function.Supplier;
 import com.singtel.java.assignment.Animal;
 import com.singtel.java.assignment.constants.Species;
 import com.singtel.java.assignment.suppliers.BirdSupplier;
+import com.singtel.java.assignment.suppliers.ChickenSupplier;
+import com.singtel.java.assignment.suppliers.DuckSupplier;
 
 public class AnimalFactory {
 
@@ -14,6 +16,8 @@ public class AnimalFactory {
 
 	static {
 		animalSuppliers.put(Species.BIRD, new BirdSupplier());
+		animalSuppliers.put(Species.DUCK, new DuckSupplier());
+		animalSuppliers.put(Species.CHICKEN, new ChickenSupplier());
 	}
 
 	public static void registerAnimalType(Species animalType, Supplier<? extends Animal> supplier) {

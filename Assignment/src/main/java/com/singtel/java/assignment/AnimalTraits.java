@@ -2,10 +2,12 @@ package com.singtel.java.assignment;
 
 public interface AnimalTraits {
 	
-	void walk();
+	boolean walk();
 	
-	void fly();
+	boolean fly();
 	
-	void sing();
+	boolean sing();
+	
+	boolean swim();
 
 }
